@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box } from '@mui/material'
 
-import { Hero, Search } from '../components'
+import { Exercises, Hero, Search } from '../components'
 
 // Use React Context API instead of props for Search and Exercises
 const Home = () => {
@@ -13,9 +13,14 @@ const Home = () => {
         <Box>
             <Hero />
             <Search
-                setExercises={setExercises}
                 bodyPart={bodyPart}
                 setBodyPart={setBodyPart}
+                setExercises={setExercises}
+            />
+            <Exercises
+                bodyPart={bodyPart}
+                setBodyPart={setBodyPart}
+                setExercises={setExercises}
             />
         </Box>
     )
