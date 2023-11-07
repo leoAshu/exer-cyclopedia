@@ -31,11 +31,6 @@ body {
     width: calc(100vw - 104px);
 }
 
-.detail-image {
-    width: 729px;
-    height: 742px;
-}
-
 .exercise-card {
     width: 400px;
     height: 445px;
@@ -80,11 +75,6 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-    .detail-image {
-        width: 300px;
-        height: 300px;
-    }
-
     .exercise-card {
         width: 320px;
     }

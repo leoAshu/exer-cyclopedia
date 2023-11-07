@@ -1,0 +1,94 @@
+import { Typography, Stack, Button } from '@mui/material'
+
+import BodyPartImage from '../assets/icons/body-part.png'
+import TargetImage from '../assets/icons/target.png'
+import EquipmentImage from '../assets/icons/equipment.png'
+
+interface DetailProps {
+    exerciseDetail: {
+        bodyPart: string
+        equipment: string
+        gifUrl: string
+        name: string
+        target: string
+    }
+}
+
+const Detail = (props: DetailProps) => {
+    console.log(props.exerciseDetail)
+    const { bodyPart, gifUrl, name, target, equipment } = props.exerciseDetail
+
+    const extraDetail = [
+        {
+            icon: BodyPartImage,
+            name: bodyPart,
+        },
+        {
+            icon: TargetImage,
+            name: target,
+        },
+        {
+            icon: EquipmentImage,
+            name: equipment,
+        },
+    ]
+
+    return (
+        <Stack
+            gap="60px"
+            sx={{
+                flexDirection: { lg: 'row' },
+                p: '20px',
+                alignItems: 'center',
+            }}
+        >
+            <img
+                src={gifUrl}
+                alt={name}
+                loading="lazy"
+                className="h-[300px] w-[300px] lg:h-[742px] lg:w-[729px]"
+            />
+            <Stack sx={{ gap: { lg: '35px', xs: '20px' } }}>
+                <Typography
+                    sx={{ fontSize: { lg: '64px', xs: '30px' } }}
+                    fontWeight={700}
+                    textTransform="capitalize"
+                >
+                    {name}
+                </Typography>
+
+                {extraDetail?.map((item) => (
+                    <Stack
+                        key={item.name}
+                        direction="row"
+                        gap="12px"
+                        alignItems="center"
+                    >
+                        <Button
+                            sx={{
+                                background: '#FFF2DB',
+                                borderRadius: '100%',
+                                width: '80px',
+                                height: '80px',
+                            }}
+                        >
+                            <img
+                                src={item.icon}
+                                alt={bodyPart}
+                                style={{ width: '40px', height: '40px' }}
+                            />
+                        </Button>
+                        <Typography
+                            textTransform="capitalize"
+                            sx={{ fontSize: { lg: '24px', xs: '16px' } }}
+                        >
+                            {item.name}
+                        </Typography>
+                    </Stack>
+                ))}
+            </Stack>
+        </Stack>
+    )
+}
+
+export default Detail
