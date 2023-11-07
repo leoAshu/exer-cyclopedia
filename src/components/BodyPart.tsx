@@ -13,7 +13,7 @@ const BodyPart = (props: BodyPartProps) => {
         <Stack
             alignItems="center"
             justifyContent="center"
-            className="bodyPart-card"
+            className="transform scale-100 transition-all duration-300 ease-in-out hover:scale-110"
             sx={{
                 borderTop:
                     props.bodyPart === props.item ? '4px solid #FF2625' : '',

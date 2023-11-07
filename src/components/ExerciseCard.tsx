@@ -9,7 +9,10 @@ interface ExerciseCardProps {
 
 const ExerciseCard = (props: ExerciseCardProps) => {
     return (
-        <Link to={`/exercise/${props.exercise.id}`} className="exercise-card">
+        <Link
+            to={`/exercise/${props.exercise.id}`}
+            className="w-400 h-445 md:w-320 lg:w-280 bg-white border-t-4 border-red-600 rounded-bl-2xl no-underline flex flex-col justify-between pb-10 scale-100 transition-transform duration-300 ease-in-out hover:scale-110"
+        >
             <img
                 src={props.exercise.gifUrl}
                 alt={props.exercise.name}
