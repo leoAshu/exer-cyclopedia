@@ -3,11 +3,12 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 
 import { HorizontalScrollbar } from '.'
 import { exerciseOptions, fetchData } from '../utils/fetchData'
+import Exercise from '../models/Exercise'
 
 interface SearchProps {
     bodyPart: String
     setBodyPart: React.Dispatch<React.SetStateAction<string>>
-    setExercises: React.Dispatch<React.SetStateAction<never[]>>
+    setExercises: React.Dispatch<React.SetStateAction<Exercise[]>>
 }
 
 const Search = (props: SearchProps) => {
@@ -30,25 +31,13 @@ const Search = (props: SearchProps) => {
     const handleSearch = async () => {
         if (search) {
             const exercises = await fetchData(
-                'https://exercisedb.p.rapidapi.com/exercises/',
+                // 'https://exercisedb.p.rapidapi.com/exercises',
+                `https://exercisedb.p.rapidapi.com/exercises/name/${search}`,
                 exerciseOptions
             )
 
-            const searchResults = exercises.filter(
-                (exercise: {
-                    name: String
-                    target: String
-                    equipment: String
-                    bodyPart: String
-                }) =>
-                    exercise.name.toLowerCase().includes(search) ||
-                    exercise.target.toLowerCase().includes(search) ||
-                    exercise.equipment.toLowerCase().includes(search) ||
-                    exercise.bodyPart.toLowerCase().includes(search)
-            )
-
             setSearch('')
-            props.setExercises(searchResults)
+            props.setExercises(exercises)
         }
     }
 
@@ -62,6 +51,7 @@ const Search = (props: SearchProps) => {
             >
                 Awesome Exercises <br /> You Should Know
             </Typography>
+
             <Box position="relative" mb="72px">
                 <TextField
                     value={search}
@@ -79,6 +69,7 @@ const Search = (props: SearchProps) => {
                         borderRadius: '40px',
                     }}
                 />
+
                 <Button
                     className="hover:text-[#FF2625] hover:border hover:border-solid hover:border-[#FF2625]"
                     sx={{
@@ -96,6 +87,7 @@ const Search = (props: SearchProps) => {
                     Search
                 </Button>
             </Box>
+
             <Box
                 sx={{
                     position: 'relative',
