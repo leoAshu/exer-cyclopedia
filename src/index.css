@@ -30,19 +30,3 @@ body {
 .react-horizontal-scrolling-menu--scroll-container {
     width: calc(100vw - 104px);
 }
-
-.exercise-video {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 387px;
-    height: 381px;
-    text-decoration: none;
-}
-
-@media screen and (max-width: 1200px) {
-    .exercise-video {
-        width: 320px;
-        height: 300px;
-    }
-}

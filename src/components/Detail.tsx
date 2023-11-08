@@ -16,7 +16,6 @@ interface DetailProps {
 }
 
 const Detail = (props: DetailProps) => {
-    console.log(props.exerciseDetail)
     const { bodyPart, gifUrl, name, target, equipment, instructions } =
         props.exerciseDetail
 
@@ -50,7 +49,7 @@ const Detail = (props: DetailProps) => {
                 loading="lazy"
                 className="h-[300px] w-[300px] lg:h-[742px] lg:w-[729px]"
             />
-            <Stack sx={{ gap: { lg: '35px', xs: '20px' } }}>
+            <Stack sx={{ gap: { lg: '35px', xs: '20px' } }} key={'detail'}>
                 <Typography
                     sx={{ fontSize: { lg: '64px', xs: '30px' } }}
                     fontWeight={700}

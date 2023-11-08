@@ -8,6 +8,7 @@ import BodyPart from './BodyPart'
 import ExerciseCard from './ExerciseCard'
 import Detail from './Detail'
 import SimilarExercises from './SimilarExercises'
+import Loader from './Loader'
 
 export {
     Navbar,
@@ -20,4 +21,5 @@ export {
     ExerciseCard,
     Detail,
     SimilarExercises,
+    Loader,
 }
