@@ -6,14 +6,14 @@ import { exerciseOptions, fetchData } from '../utils/fetchData'
 import Exercise from '../models/Exercise'
 
 interface SearchProps {
-    bodyPart: String
+    bodyPart: string
     setBodyPart: React.Dispatch<React.SetStateAction<string>>
     setExercises: React.Dispatch<React.SetStateAction<Exercise[]>>
 }
 
 const Search = (props: SearchProps) => {
     const [search, setSearch] = useState('')
-    const [bodyParts, setBodyParts] = useState([] as String[])
+    const [bodyParts, setBodyParts] = useState([] as string[])
 
     useEffect(() => {
         const fetchExercises = async () => {

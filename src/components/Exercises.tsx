@@ -7,7 +7,7 @@ import Exercise from '../models/Exercise'
 import { ExerciseCard } from '.'
 
 interface ExercisesProps {
-    bodyPart: String
+    bodyPart: string
     exercises: Exercise[]
     setExercises: React.Dispatch<React.SetStateAction<Exercise[]>>
 }

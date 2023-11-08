@@ -3,8 +3,8 @@ import { Stack, Typography } from '@mui/material'
 import Icon from '../assets/icons/gym.png'
 
 interface BodyPartProps {
-    item: String
-    bodyPart: String
+    item: string
+    bodyPart: string
     setBodyPart: React.Dispatch<React.SetStateAction<string>>
 }
 
