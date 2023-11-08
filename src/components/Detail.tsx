@@ -11,12 +11,14 @@ interface DetailProps {
         gifUrl: string
         name: string
         target: string
+        instructions: string[]
     }
 }
 
 const Detail = (props: DetailProps) => {
     console.log(props.exerciseDetail)
-    const { bodyPart, gifUrl, name, target, equipment } = props.exerciseDetail
+    const { bodyPart, gifUrl, name, target, equipment, instructions } =
+        props.exerciseDetail
 
     const extraDetail = [
         {
@@ -35,11 +37,11 @@ const Detail = (props: DetailProps) => {
 
     return (
         <Stack
-            gap="60px"
+            gap="30px"
             sx={{
                 flexDirection: { lg: 'row' },
-                p: '20px',
-                alignItems: 'center',
+                p: '12px',
+                alignItems: { lg: 'flex-start', md: 'center' },
             }}
         >
             <img
@@ -56,6 +58,17 @@ const Detail = (props: DetailProps) => {
                 >
                     {name}
                 </Typography>
+
+                <Stack>
+                    {instructions &&
+                        instructions.map((instruction) => (
+                            <Typography
+                                sx={{ fontSize: { lg: '18px', xs: '16px' } }}
+                            >
+                                {instruction}
+                            </Typography>
+                        ))}
+                </Stack>
 
                 {extraDetail?.map((item) => (
                     <Stack
