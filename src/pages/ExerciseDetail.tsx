@@ -8,7 +8,6 @@ import Exercise from '../models/Exercise'
 
 const ExerciseDetail = () => {
     const [exerciseDetail, setExerciseDetail] = useState({} as Exercise)
-    // const [exerciseVideos, setExerciseVideos] = useState([])
     const [targetMuscleExercises, setTargetMuscleExercises] = useState([])
     const [equipmentExercises, setEquipmentExercises] = useState([])
     const { id } = useParams()
@@ -44,10 +43,6 @@ const ExerciseDetail = () => {
     return (
         <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
             <Detail exerciseDetail={exerciseDetail} />
-            {/* <ExerciseVideos
-                exerciseVideos={exerciseVideos}
-                name={exerciseDetail.name}
-            /> */}
             <SimilarExercises
                 targetMuscleExercises={targetMuscleExercises}
                 equipmentExercises={equipmentExercises}
