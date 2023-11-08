@@ -3,7 +3,7 @@ import Logo from '../assets/images/Logo.png'
 
 const Footer = () => {
     return (
-        <Box mt="80px" bgcolor="#FFF3F4">
+        <Box mt="80px" bgcolor="#FFF3F4" position="absolute" left="0" right="0">
             <Stack
                 gap="40px"
                 sx={{ alignItems: 'center' }}
